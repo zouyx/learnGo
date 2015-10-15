@@ -5,10 +5,10 @@ import (
 	"math/rand"
 )
 
-func init(){
+func init() {
 	fmt.Println("init !")
 }
 
 func main() {
-	fmt.Println("hello wolrd!",rand.Intn(10))
+	fmt.Println("hello wolrd!", rand.Intn(10))
 }
