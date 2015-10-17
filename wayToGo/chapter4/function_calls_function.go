@@ -4,7 +4,7 @@ var a string
 
 func main() {
    a = "G"
-   print(a)
+   print(a, b)
    f1()
 }
 
