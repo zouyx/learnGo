@@ -2,13 +2,17 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 func main() {
 	res := 0
-	for i := 0; i<=10 ; i++{
+	start := time.Now()	
+	for i := 0; i<=40 ; i++{
 		res = fibonacci(i)
 		fmt.Printf("f(%d) is %d \n ", i, res)
 	}
+	end := time.Now()	
+	fmt.Println("delta:",end.Sub(start))
 }
 
 func fibonacci(n int) (res int) {
