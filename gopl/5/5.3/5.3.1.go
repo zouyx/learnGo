@@ -21,6 +21,10 @@ func main() {
 		"joe":     34,
 	}
 
+	for k, v := range ages {
+		fmt.Printf("%v %v\n", k, v)
+	}
+
 	fmt.Println(ages)
 	ch := make(chan string)
 
@@ -33,6 +37,11 @@ func main() {
 	}
 
 	fmt.Println(ages)
+	//其他语法
+	ages["charlie"]++
+	ages["joe"]++
+	fmt.Println(ages["charlie"])
+	fmt.Println(ages["joe"])
 }
 
 func delKey(m *map[string]int, num int, ch chan<- string) {
