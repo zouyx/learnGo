@@ -2,13 +2,32 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
-func add1(r rune) rune { return r + 1 }
+func squares() func() int {
+	var x int
+	return func() int {
+		x++
+		return x * x
+	}
+}
 
 func main() {
-	fmt.Println(strings.Map(add1, "HAL-9000")) // "IBM.:111"
-	fmt.Println(strings.Map(add1, "VMS"))      // "WNT"
-	fmt.Println(strings.Map(add1, "Admix"))    // "Benjy"
+	f := squares()
+	f1 := f()
+	fmt.Println(f, &f1, f1)
+	f1 = f()
+	fmt.Println(f, &f1, f1)
+	f1 = f()
+	fmt.Println(f, &f1, f1)
+	f1 = f()
+	fmt.Println(f, &f1, f1)
+
+	f = nil
+	f1 = 0
+
+	f = squares()
+	f1 = f()
+	fmt.Println(f, &f1, f1)
+
 }
